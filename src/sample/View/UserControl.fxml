@@ -24,6 +24,21 @@
                <font>
                   <Font size="24.0" />
                </font></Button>
+            <Button alignment="CENTER" depthTest="ENABLE" layoutX="10.0" layoutY="244.0" mnemonicParsing="false" prefHeight="97.0" prefWidth="249.0" stylesheets="@../CSS/CSSStylePackeg.css" text="Home2" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Button alignment="CENTER" depthTest="ENABLE" layoutX="10.0" layoutY="341.0" mnemonicParsing="false" prefHeight="97.0" prefWidth="249.0" stylesheets="@../CSS/CSSStylePackeg.css" text="Home3" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Button alignment="CENTER" depthTest="ENABLE" layoutX="10.0" layoutY="438.0" mnemonicParsing="false" prefHeight="97.0" prefWidth="249.0" stylesheets="@../CSS/CSSStylePackeg.css" text="Home4" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
          </children>
       </VBox>
       <GridPane fx:id="Main" prefHeight="1000.0" prefWidth="1352.0" style="-fx-background-color: #672297;" GridPane.columnIndex="1">
