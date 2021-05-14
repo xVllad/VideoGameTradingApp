@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1600.0" style="-fx-background-color: #ffd33b;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -37,10 +36,6 @@
                   <Font size="16.0" />
                </font>
             </Hyperlink>
-            <FontAwesomeIconView fill="#1c0b43" glyphName="USER" layoutX="154.0" layoutY="230.0" size="30" wrappingWidth="27.0" />
-            <FontAwesomeIconView fill="#1c0b43" glyphName="LOCK" layoutX="155.0" layoutY="331.0" size="30" wrappingWidth="27.0" />
-            <FontAwesomeIconView fill="#1c0b43" glyphName="LOCK" layoutX="155.0" layoutY="434.0" size="30" wrappingWidth="27.0" />
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="248.0" layoutY="-61.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </AnchorPane>
    </children>
