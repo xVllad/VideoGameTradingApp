@@ -14,14 +14,24 @@ import java.io.IOException;
 public class Login {
 
 
-    @FXML private Button Login;
 
-    public void OnClickEvent(MouseEvent mouseEvent) throws IOException {
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
 
-        Parent RegisterSceneParent = FXMLLoader.load(getClass().getResource("View/Login.fxml"));
-        Scene RegisterScene = new Scene(RegisterSceneParent);
-        Stage window = (Stage) ((Node)mouseEvent.getSource()).getScene().getWindow();
-        window.setScene(RegisterScene);
-        window.show();
+    public void OnClickEventRegister(javafx.event.ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("SignUp.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void OnClickEventLogin(javafx.event.ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("UserControl.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 }

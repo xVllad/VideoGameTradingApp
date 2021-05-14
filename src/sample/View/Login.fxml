@@ -31,11 +31,11 @@
                   <Font size="18.0" />
                </font>
             </PasswordField>
-            <Button fx:id="Login" layoutX="416.0" layoutY="589.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" stylesheets="@../CSS/LoginStyle.css" text="Login">
+            <Button fx:id="Login" onAction="#OnClickEventLogin" layoutX="416.0" layoutY="589.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" stylesheets="@../CSS/LoginStyle.css" text="Login">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font></Button>
-            <Hyperlink layoutX="439.0" layoutY="669.0" onMouseClicked="#OnClickEvent" prefHeight="39.0" prefWidth="154.0" style="-fx-text-fill: #1c0b43;" text="New? Sign Up Here!">
+            <Hyperlink layoutX="439.0" layoutY="669.0" onAction="#OnClickEventRegister" prefHeight="39.0" prefWidth="154.0" style="-fx-text-fill: #1c0b43;" text="New? Sign Up Here!">
                <font>
                   <Font size="16.0" />
                </font>
