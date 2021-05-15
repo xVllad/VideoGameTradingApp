@@ -10,25 +10,25 @@
    <children>
       <BorderPane prefHeight="1000.0" prefWidth="1600.0">
          <left>
-            <VBox prefHeight="1000.0" prefWidth="278.0" style="-fx-background-color: #3F2B63;" BorderPane.alignment="CENTER">
+            <VBox prefHeight="1000.0" prefWidth="300.0" style="-fx-background-color: #3F2B63;" BorderPane.alignment="CENTER">
                <children>
-                  <AnchorPane prefHeight="281.0" prefWidth="278.0" />
-                  <Button fx:id="btnHome" mnemonicParsing="false" onAction="#switchToScene" prefHeight="101.0" prefWidth="278.0" stylesheets="@../CSS/CSSStylePackeg.css" text="Home" textFill="WHITE">
+                  <AnchorPane prefHeight="300.0" prefWidth="300.0" />
+                  <Button fx:id="btnHome" mnemonicParsing="false" onAction="#switchToScene" prefHeight="100.0" prefWidth="300.0" stylesheets="@../CSS/CSSStylePackeg.css" text="Home" textFill="WHITE">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Button>
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="101.0" prefWidth="278.0" stylesheets="@../CSS/CSSStylePackeg.css" text="Home2" textFill="WHITE">
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" stylesheets="@../CSS/CSSStylePackeg.css" text="Home2" textFill="WHITE">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Button>
-                  <Button layoutX="10.0" layoutY="111.0" mnemonicParsing="false" prefHeight="101.0" prefWidth="278.0" stylesheets="@../CSS/CSSStylePackeg.css" text="Home3" textFill="WHITE">
+                  <Button layoutX="10.0" layoutY="111.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" stylesheets="@../CSS/CSSStylePackeg.css" text="Home3" textFill="WHITE">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Button>
-                  <Button layoutX="10.0" layoutY="212.0" mnemonicParsing="false" prefHeight="101.0" prefWidth="278.0" stylesheets="@../CSS/CSSStylePackeg.css" text="Home4" textFill="WHITE">
+                  <Button layoutX="10.0" layoutY="212.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" stylesheets="@../CSS/CSSStylePackeg.css" text="Home4" textFill="WHITE">
                      <font>
                         <Font size="24.0" />
                      </font>
@@ -36,6 +36,9 @@
                </children>
             </VBox>
          </left>
+         <center>
+            <AnchorPane fx:id="LoadFXMLScene" prefHeight="1000.0" prefWidth="1300.0" BorderPane.alignment="CENTER" />
+         </center>
       </BorderPane>
    </children>
 </AnchorPane>

@@ -6,6 +6,8 @@ import javafx.scene.control.Button;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import sample.Main;
 
@@ -15,6 +17,8 @@ import java.io.IOException;
 public class UserControl {
     @FXML
     private Button btnHome;
+    @FXML
+    private AnchorPane LoadFXMLScene;
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -34,14 +38,10 @@ public class UserControl {
          */
     }
 
-
     public void switchToScene(javafx.event.ActionEvent event) throws IOException {
-        /*
-        Parent root = FXMLLoader.load(getClass().getResource("SignUp.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-        */
+
+        AnchorPane obj = FXMLLoader.load(getClass().getResource("Profile.fxml"));
+        LoadFXMLScene.getChildren().setAll(obj);
+
     }
 }
