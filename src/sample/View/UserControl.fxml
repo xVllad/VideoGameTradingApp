@@ -13,12 +13,12 @@
             <VBox prefHeight="1000.0" prefWidth="300.0" style="-fx-background-color: #3F2B63;" BorderPane.alignment="CENTER">
                <children>
                   <AnchorPane prefHeight="300.0" prefWidth="300.0" />
-                  <Button fx:id="btnHome" mnemonicParsing="false" onAction="#switchToScene" prefHeight="100.0" prefWidth="300.0" stylesheets="@../CSS/CSSStylePackeg.css" text="Home" textFill="WHITE">
+                  <Button fx:id="btnHome" mnemonicParsing="false" onAction="#ButtonProfile" prefHeight="100.0" prefWidth="300.0" stylesheets="@../CSS/CSSStylePackeg.css" text="PROFILE" textFill="WHITE">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Button>
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" stylesheets="@../CSS/CSSStylePackeg.css" text="Home2" textFill="WHITE">
+                  <Button layoutX="10.0" layoutY="10.0" onAction="#ButtonHome" mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" stylesheets="@../CSS/CSSStylePackeg.css" text="HOME" textFill="WHITE">
                      <font>
                         <Font size="24.0" />
                      </font>

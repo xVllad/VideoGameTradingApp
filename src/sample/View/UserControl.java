@@ -38,7 +38,13 @@ public class UserControl {
          */
     }
 
-    public void switchToScene(javafx.event.ActionEvent event) throws IOException {
+    public void ButtonHome(javafx.event.ActionEvent event) throws IOException {
+
+        AnchorPane obj = FXMLLoader.load(getClass().getResource("Profile.fxml"));
+        LoadFXMLScene.getChildren().setAll(obj);
+
+    }
+    public void ButtonProfile(javafx.event.ActionEvent event) throws IOException {
 
         AnchorPane obj = FXMLLoader.load(getClass().getResource("Profile.fxml"));
         LoadFXMLScene.getChildren().setAll(obj);
