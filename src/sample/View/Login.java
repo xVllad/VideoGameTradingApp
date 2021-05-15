@@ -13,8 +13,9 @@ import sample.Model.DataBase;
 import sample.Model.Person;
 
 import java.io.IOException;
-
+import sample.Model.DataBase;
 public class Login {
+
 
 
     public TextField LoginField;
@@ -35,6 +36,7 @@ public class Login {
     public void OnClickEventLogin(javafx.event.ActionEvent event) throws IOException {
         for (Person pers : DataBase.getPersonData()) {
             if (pers.getName().equals(LoginField.getText())) {
+
                 Parent root = FXMLLoader.load(getClass().getResource("UserControl.fxml"));
                 stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 scene = new Scene(root);

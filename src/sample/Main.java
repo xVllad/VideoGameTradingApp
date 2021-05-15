@@ -7,9 +7,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import sample.Model.DataBase;
 import sample.Model.Person;
+import sun.security.util.Password;
+import sample.Model.DataBase;
+import javax.naming.Name;
 
 public class Main extends Application {
+
 
 
 
@@ -19,6 +24,10 @@ public class Main extends Application {
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 1600, 1000));
         primaryStage.show();
+
+        DataBase.readXMLPerson();
+        DataBase.readXMLGames();
+
     }
 
 

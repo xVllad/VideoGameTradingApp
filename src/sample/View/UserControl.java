@@ -40,7 +40,7 @@ public class UserControl {
 
     public void ButtonHome(javafx.event.ActionEvent event) throws IOException {
 
-        AnchorPane obj = FXMLLoader.load(getClass().getResource("Profile.fxml"));
+        AnchorPane obj = FXMLLoader.load(getClass().getResource("Home.fxml"));
         LoadFXMLScene.getChildren().setAll(obj);
 
     }
