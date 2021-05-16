@@ -39,9 +39,9 @@ public class DataBase {
         return GameListData;
     }
 
-    public static void AddAccount(String name,String password,ObservableList<Games> hl)
+    public static void AddAccount(String name,String password,ObservableList<Games> hl,String ph,int check)
     {
-        personData.add(new Person(name,password,null,hl,0));
+        personData.add(new Person(name,password,ph,hl,check));
         writeXMLPerson();
     }
 

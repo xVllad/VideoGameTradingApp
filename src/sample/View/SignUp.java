@@ -1,20 +1,25 @@
 package sample.View;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import sample.Model.DataBase;
+import sample.Model.Person;
 import sample.ViewModel.SignUpViewModel;
 
 import java.awt.*;
 import java.io.IOException;
 public class SignUp {
 
+    public CheckBox checkBuy;
+    public CheckBox checkSel;
     private SignUpViewModel signVM;
     public TextField UserNameField;
     public TextField PasswordField;
@@ -23,6 +28,7 @@ public class SignUp {
     private Scene scene;
     private Parent root;
     private DataBase dtBase;
+    private int check=-1;
 
 
 
@@ -34,7 +40,17 @@ public class SignUp {
             alert.setTitle("Account  Registration");
             alert.setHeaderText("Account created Successful!");
             alert.showAndWait();
-            DataBase.AddAccount(UserNameField.getText(),PasswordField.getText(),null);
+            if(checkBuy.isSelected())
+            {
+                check = 0;
+            }
+            else if(checkSel.isSelected())
+            {
+                check = 1;
+            }
+            System.out.println(check+"DA");
+            DataBase.AddAccount(UserNameField.getText(),PasswordField.getText(),null,null,check);
+            //DataBase.getPersonData().add(new Person(UserNameField.getText(),PasswordField.getText(),null,check));
             Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
@@ -50,15 +66,27 @@ public class SignUp {
             alert.showAndWait();
         }
     }
-    public void AddAccount()
-    {
 
-    }
     public void OnClickEventAlreadyHave(javafx.event.ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void CheckBuy(ActionEvent event) {
+        if(checkSel.isSelected())
+        {
+            checkSel.setSelected(false);
+        }
+    }
+
+    public void CheckSel(ActionEvent event) {
+
+        if(checkBuy.isSelected())
+        {
+            checkBuy.setSelected(false);
+        }
     }
 }

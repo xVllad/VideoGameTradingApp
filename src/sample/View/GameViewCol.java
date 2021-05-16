@@ -24,7 +24,7 @@ public class GameViewCol implements Initializable {
         GamePriceCol.setText(DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList().get(index).getPrice());
     }
 
-    public void EditCol(ActionEvent event) {
+    public void RemoveFromCol(ActionEvent event) {
 
     }
 }

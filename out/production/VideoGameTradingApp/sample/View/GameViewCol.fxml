@@ -15,6 +15,6 @@
         <Label fx:id="GameNameCol" layoutX="143.0" layoutY="35.0" prefHeight="31.0" prefWidth="248.0" text="Label" />
         <Label fx:id="GameDescCol" layoutX="413.0" layoutY="35.0" prefHeight="31.0" prefWidth="343.0" text="Label" />
         <Label fx:id="GamePriceCol" layoutX="663.0" layoutY="35.0" prefHeight="31.0" prefWidth="187.0" text="Label" />
-        <Button layoutX="1116.0" layoutY="16.0" mnemonicParsing="false" onAction="#EditCol" prefHeight="70.0" prefWidth="70.0" text="REMOVE" />
+        <Button layoutX="1116.0" layoutY="16.0" mnemonicParsing="false" onAction="#RemoveFromCol" prefHeight="70.0" prefWidth="70.0" text="REMOVE" />
     </children>
 </AnchorPane>

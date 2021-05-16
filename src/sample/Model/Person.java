@@ -1,8 +1,6 @@
 package sample.Model;
 
-import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -12,7 +10,7 @@ public class Person {
     private final StringProperty Name;
     private final StringProperty Password;
     private final StringProperty Photo;
-    private final int Type;
+    private final IntegerProperty Type;
 
     private ObservableList<Games> GameLoginList ;
 
@@ -34,7 +32,7 @@ public class Person {
         this.Password = new SimpleStringProperty(Password);
         this.Photo = new SimpleStringProperty(Photo);
         this.GameLoginList = FXCollections.observableArrayList();
-        this.Type = Type;
+        this.Type = new SimpleIntegerProperty(Type);
 
     }
     // private List<Games> PersonGameList;
@@ -48,6 +46,10 @@ public class Person {
         return Name;
     }
 
+    public void setName(String name) {
+        this.Name.set(name);
+    }
+
     public String getPassword() {
         return Password.get();
     }
@@ -58,10 +60,6 @@ public class Person {
 
     public void setPassword(String password) {
         this.Password.set(password);
-    }
-
-    public void setName(String name) {
-        this.Name.set(name);
     }
 
     public String getPhoto() {
@@ -77,6 +75,14 @@ public class Person {
     }
 
     public int getType() {
+        return Type.get();
+    }
+
+    public IntegerProperty typeProperty() {
         return Type;
+    }
+
+    public void setType(int type) {
+        this.Type.set(type);
     }
 }
