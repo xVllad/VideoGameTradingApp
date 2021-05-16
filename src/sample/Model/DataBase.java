@@ -28,6 +28,7 @@ public class DataBase {
     private static ObservableList<Games> GameListData = FXCollections.observableArrayList();
     public static File fileLogin ;
     public static File fileGames ;
+    public static int indexLogin;
 
 
     public static List<Person> getPersonData() {
@@ -40,7 +41,7 @@ public class DataBase {
 
     public static void AddAccount(String name,String password,ObservableList<Games> hl)
     {
-        personData.add(new Person(name,password,null,hl));
+        personData.add(new Person(name,password,null,hl,0));
         writeXMLPerson();
     }
 
@@ -51,7 +52,6 @@ public class DataBase {
 
     public static void AddGame()
     {
-        GameListData.add(new Games("Half Life","ceva ceava ceva ceava","Joc", "12"));
         writeXMLGames();
     }
 

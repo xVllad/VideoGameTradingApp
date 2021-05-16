@@ -12,6 +12,7 @@ public class Person {
     private final StringProperty Name;
     private final StringProperty Password;
     private final StringProperty Photo;
+    private final int Type;
 
     private ObservableList<Games> GameLoginList ;
 
@@ -25,14 +26,15 @@ public class Person {
 
     public Person()
     {
-        this(null,null,null,null);
+        this(null,null,null,null,0);
     }
 
-    public Person(String Name,String Password,String Photo,ObservableList<Games> GameLoginList) {
+    public Person(String Name,String Password,String Photo,ObservableList<Games> GameLoginList,int Type) {
         this.Name = new SimpleStringProperty(Name);
         this.Password = new SimpleStringProperty(Password);
         this.Photo = new SimpleStringProperty(Photo);
         this.GameLoginList = FXCollections.observableArrayList();
+        this.Type = Type;
 
     }
     // private List<Games> PersonGameList;
@@ -72,5 +74,9 @@ public class Person {
 
     public void setPhoto(String photo) {
         this.Photo.set(photo);
+    }
+
+    public int getType() {
+        return Type;
     }
 }

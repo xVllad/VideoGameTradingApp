@@ -11,6 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import sample.Model.DataBase;
+import sample.Model.Games;
 import sample.Model.Person;
 
 import javax.swing.text.html.ImageView;
@@ -41,6 +42,7 @@ public class Login {
     }
 
     public void OnClickEventLogin(javafx.event.ActionEvent event) throws IOException {
+        int i=0;
         for (Person pers : DataBase.getPersonData()) {
             if (pers.getName().equals(LoginField.getText())) {
                 username = LoginField.getText();
@@ -49,8 +51,18 @@ public class Login {
                 scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
-
+                DataBase.indexLogin = i;
+                break;
             }
+            i++;
         }
+
+        for (Games gms:
+             DataBase.getPersonData().get(i).getGameLoginList()) {
+            GameView.gmList.add(gms);
+            AddGameToSell.gls.add(gms);
+        }
+
+
     }
 }

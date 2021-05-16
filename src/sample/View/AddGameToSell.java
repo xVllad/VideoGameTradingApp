@@ -22,13 +22,13 @@ public class AddGameToSell {
     public TextField GameTypeE;
     public TextField GamePriceE;
     public TextArea GameDescE;
-    public ObservableList<Games> gls = FXCollections.observableArrayList();
+    public static ObservableList<Games> gls = FXCollections.observableArrayList();
 
     public void AddGameToList(ActionEvent event) throws IOException {
         if(GameNameE.getText() != null && GameDescE.getText() != null && GameTypeE.getText() != null && GamePriceE.getText() != null) {
-            DataBase.getGamesData().add(new Games(GameNameE.getText(), GameDescE.getText(), GameTypeE.getText(), GamePriceE.getText()));
+            DataBase.getGamesData().add(new Games(GameNameE.getText(), GameDescE.getText(), GameTypeE.getText(), GamePriceE.getText(),DataBase.getPersonData().get(DataBase.indexLogin).getName()));
             DataBase.writeXMLGames();
-            gls.add(new Games(GameNameE.getText(), GameDescE.getText(), GameTypeE.getText(), GamePriceE.getText()));
+            gls.add(new Games(GameNameE.getText(), GameDescE.getText(), GameTypeE.getText(), GamePriceE.getText(),null));
             for (Person ps :
                     DataBase.getPersonData()) {
                if(ps.getName().equals(Login.username))

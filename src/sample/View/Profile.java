@@ -28,8 +28,15 @@ public class Profile implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         try {
             UserName.setText(Login.username);
-
-            getGames();
+            GameColectionList.getChildren().removeAll(GameColectionList.getChildren());
+            if(DataBase.getPersonData().get(DataBase.indexLogin).getType() == 0)
+            {
+                getCollectionBuyer();
+            }
+            else if(DataBase.getPersonData().get(DataBase.indexLogin).getType() == 1)
+            {
+                getCollectionSeller();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -42,20 +49,28 @@ public class Profile implements Initializable {
         stage.show();
     }
 
-    public void getGames() throws IOException
+    public void getCollectionSeller() throws IOException
     {
-        GameColectionList.getChildren().removeAll(GameColectionList.getChildren());
-        System.out.println(DataBase.getGamesData().size());
-       // obs = FXCollections.observableArrayList();
-        //obs.addAll(DataBase.getPersonData().get())
-        Node[] nd = new Node[10];
+
+        Node[] nd = new Node[DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList().size()];
         for(int i=0 ; i<nd.length;i++)
         {
-            GameView.index = i;
-            nd[i] = (Node) FXMLLoader.load(getClass().getResource("GameView.fxml"));
+            GameViewCol.index = i;
+            nd[i] = (Node) FXMLLoader.load(getClass().getResource("GameViewCol.fxml"));
             GameColectionList.getChildren().add(nd[i]);
         }
     }
 
+    public void getCollectionBuyer() throws IOException
+    {
+
+        Node[] nd = new Node[DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList().size()];
+        for(int i=0 ; i<nd.length;i++)
+        {
+            GameViewCol.index = i;
+            nd[i] = (Node) FXMLLoader.load(getClass().getResource("GameViewCol.fxml"));
+            GameColectionList.getChildren().add(nd[i]);
+        }
+    }
 
 }
