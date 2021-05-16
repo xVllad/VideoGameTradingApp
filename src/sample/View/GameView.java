@@ -2,6 +2,7 @@ package sample.View;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import sample.Model.DataBase;
@@ -22,7 +23,14 @@ public class GameView implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         GameName.setText(DataBase.getGamesData().get(index).getName());
+        GameDesc.setText(DataBase.getGamesData().get(index).getDescription());
+        GameType.setText(DataBase.getGamesData().get(index).getType());
+        GamePrice.setText(DataBase.getGamesData().get(index).getPrice());
         //System.out.println(GameName.);
+    }
+
+    public void BuyGame(ActionEvent actionEvent) {
+
     }
 
     //public void

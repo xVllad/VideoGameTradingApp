@@ -12,7 +12,7 @@
       <TextField layoutX="50.0" layoutY="40.0" prefHeight="32.0" prefWidth="210.0" />
       <ListView fx:id="GameListAll" layoutX="50.0" layoutY="22.0" prefHeight="7.0" prefWidth="1200.0" style="-fx-background-color: #33234F;" />
       <Button layoutX="1102.0" layoutY="44.0" mnemonicParsing="false" onAction="#AddGame" prefHeight="25.0" prefWidth="148.0" text="Button" />
-      <ScrollPane layoutX="50.0" layoutY="91.0" prefHeight="850.0" prefWidth="1200.0">
+      <ScrollPane layoutX="50.0" layoutY="91.0" prefHeight="850.0" prefWidth="1215.0">
          <content>
             <VBox fx:id="GameListVB" prefHeight="850.0" prefWidth="1200.0" />
          </content>

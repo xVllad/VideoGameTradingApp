@@ -11,8 +11,8 @@
       <ImageView fitHeight="90.0" fitWidth="100.0" layoutX="6.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
       <Label fx:id="GameName" layoutX="143.0" layoutY="35.0" prefHeight="31.0" prefWidth="248.0" text="Label" />
       <Label fx:id="GameDesc" layoutX="413.0" layoutY="35.0" prefHeight="31.0" prefWidth="343.0" text="Label" />
-      <Label fx:id="GameType" layoutX="1021.0" layoutY="35.0" prefHeight="31.0" prefWidth="40.0" text="Label" />
-      <Label fx:id="GamePrice" layoutX="802.0" layoutY="35.0" prefHeight="31.0" prefWidth="187.0" text="Label" />
-      <Button layoutX="1116.0" layoutY="16.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" text="BUY" />
+      <Label fx:id="GamePrice" layoutX="1021.0" layoutY="35.0" prefHeight="31.0" prefWidth="40.0" text="Label" />
+      <Label fx:id="GameType" layoutX="802.0" layoutY="35.0" prefHeight="31.0" prefWidth="187.0" text="Label" />
+      <Button onAction="#BuyGame" layoutX="1116.0" layoutY="16.0" mnemonicParsing="false" prefHeight="70.0" prefWidth="70.0" text="BUY" />
    </children>
 </AnchorPane>
