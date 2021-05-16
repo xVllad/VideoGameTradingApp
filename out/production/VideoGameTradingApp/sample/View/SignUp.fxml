@@ -11,22 +11,22 @@
    <children>
       <AnchorPane layoutX="442.0" layoutY="77.0" prefHeight="847.0" prefWidth="717.0" style="-fx-background-color: white;">
          <children>
-            <TextField layoutX="209.0" layoutY="198.0" prefHeight="40.0" prefWidth="300.0" promptText="Pick an username" style="-fx-background-color: transparent; -fx-border-color: #1c0b43; -fx-border-width: 0px 0px 4px 0px;">
+            <TextField fx:id="UserNameField" layoutX="209.0" layoutY="198.0" prefHeight="40.0" prefWidth="300.0" promptText="Pick an username" style="-fx-background-color: transparent; -fx-border-color: #1c0b43; -fx-border-width: 0px 0px 4px 0px;">
                <font>
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField layoutX="209.0" layoutY="299.0" prefHeight="40.0" prefWidth="300.0" promptText="Pick a password" style="-fx-background-color: transparent; -fx-border-color: #1c0b43; -fx-border-width: 0px 0px 4px 0px;">
+            <TextField fx:id="PasswordField" layoutX="209.0" layoutY="299.0" prefHeight="40.0" prefWidth="300.0" promptText="Pick a password" style="-fx-background-color: transparent; -fx-border-color: #1c0b43; -fx-border-width: 0px 0px 4px 0px;">
                <font>
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField layoutX="209.0" layoutY="402.0" prefHeight="40.0" prefWidth="300.0" promptText="Repeat password" style="-fx-background-color: transparent; -fx-border-color: #1c0b43; -fx-border-width: 0px 0px 4px 0px;">
+            <TextField fx:id="RePasswordField" layoutX="209.0" layoutY="402.0" prefHeight="40.0" prefWidth="300.0" promptText="Repeat password" style="-fx-background-color: transparent; -fx-border-color: #1c0b43; -fx-border-width: 0px 0px 4px 0px;">
                <font>
                   <Font size="18.0" />
                </font>
             </TextField>
-            <Button layoutX="259.0" layoutY="555.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #1c0b43;" text="Create Account" textFill="#f8f6f6">
+            <Button onAction="#CreateAccountBtn" layoutX="259.0" layoutY="555.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #1c0b43;" text="Create Account" textFill="#f8f6f6">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>

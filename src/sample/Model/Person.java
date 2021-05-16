@@ -1,25 +1,61 @@
 package sample.Model;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.collections.ObservableList;
 
+import java.util.List;
+
 public class Person {
-    private String name;
-    private String password;
-    private ObservableList<Games> PersonGameList;
+    private final StringProperty Name;
+    private final StringProperty Password;
+    private final StringProperty Photo;
+
+    public Person()
+    {
+        this(null,null,null);
+    }
+    public Person(String Name,String Password,String Photo) {
+        this.Name = new SimpleStringProperty(Name);
+        this.Password = new SimpleStringProperty(Password);
+        this.Photo = new SimpleStringProperty(Photo);
+    }
+    // private List<Games> PersonGameList;
+
 
     public String getName() {
-        return name;
+        return Name.get();
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public StringProperty nameProperty() {
+        return Name;
     }
 
     public String getPassword() {
-        return password;
+        return Password.get();
+    }
+
+    public StringProperty passwordProperty() {
+        return Password;
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.Password.set(password);
+    }
+
+    public void setName(String name) {
+        this.Name.set(name);
+    }
+
+    public String getPhoto() {
+        return Photo.get();
+    }
+
+    public StringProperty photoProperty() {
+        return Photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.Photo.set(photo);
     }
 }
