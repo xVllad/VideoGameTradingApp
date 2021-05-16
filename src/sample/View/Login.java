@@ -1,4 +1,5 @@
 package sample.View;
+import javafx.fxml.FXML;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,9 +13,15 @@ import javafx.stage.Stage;
 import sample.Model.DataBase;
 import sample.Model.Person;
 
+import javax.swing.text.html.ImageView;
 import java.io.IOException;
 import sample.Model.DataBase;
 public class Login {
+
+    @FXML
+
+    ImageView myImageView;
+
 
 
 
