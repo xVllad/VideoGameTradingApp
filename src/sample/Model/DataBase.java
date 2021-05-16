@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.prefs.Preferences;
 
 import javafx.stage.Stage;
+import sample.Main;
 import sample.Model.Person;
 import sample.Model.Games;
 import sample.Model.ListPersonWrap;
@@ -25,8 +26,8 @@ public class DataBase {
 
     private static List<Person> personData = new ArrayList<>();
     private static ObservableList<Games> GameListData = FXCollections.observableArrayList();
-    private static File fileLogin = new File("C:\\Users\\vladb\\Documents\\Java\\Login.xml");
-    private static File fileGames = new File("C:\\Users\\vladb\\Documents\\Java\\Games.xml");
+    public static File fileLogin ;
+    public static File fileGames ;
 
 
     public static List<Person> getPersonData() {

@@ -12,6 +12,9 @@ import sample.Model.Person;
 import sun.security.util.Password;
 import sample.Model.DataBase;
 import javax.naming.Name;
+import javax.swing.*;
+import javax.swing.filechooser.FileSystemView;
+import java.io.File;
 
 public class Main extends Application {
 
@@ -24,7 +27,11 @@ public class Main extends Application {
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 1600, 1000));
         primaryStage.show();
-
+        JFileChooser fr = new JFileChooser();
+        FileSystemView fw = fr.getFileSystemView();
+        DataBase.fileLogin = new File(fw.getDefaultDirectory() + "\\Java\\Login.xml");
+        DataBase.fileGames = new File(fw.getDefaultDirectory() + "\\Java\\Games.xml");
+        System.out.println(DataBase.fileLogin);
         DataBase.readXMLPerson();
         DataBase.readXMLGames();
 
