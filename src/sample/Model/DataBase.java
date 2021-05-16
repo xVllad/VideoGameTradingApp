@@ -38,9 +38,9 @@ public class DataBase {
         return GameListData;
     }
 
-    public static void AddAccount(String name,String password)
+    public static void AddAccount(String name,String password,ObservableList<Games> hl)
     {
-        personData.add(new Person(name,password,null));
+        personData.add(new Person(name,password,null,hl));
         writeXMLPerson();
     }
 
@@ -56,10 +56,7 @@ public class DataBase {
     }
 
 
-    public DataBase()
-    {
 
-    }
 
     public static void writeXMLGames()
     {

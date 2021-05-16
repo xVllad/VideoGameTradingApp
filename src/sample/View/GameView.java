@@ -8,6 +8,7 @@ import javafx.scene.control.Label;
 import sample.Model.DataBase;
 import sample.Model.Games;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -23,16 +24,24 @@ public class GameView implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         GameName.setText(DataBase.getGamesData().get(index).getName());
+        //GameName.setText(DataBase.getPersonData().get(0).getGameLoginList().get(index).getName());
         GameDesc.setText(DataBase.getGamesData().get(index).getDescription());
         GameType.setText(DataBase.getGamesData().get(index).getType());
         GamePrice.setText(DataBase.getGamesData().get(index).getPrice());
         //System.out.println(GameName.);
     }
 
-    public void BuyGame(ActionEvent actionEvent) {
+    public void BuyGame(ActionEvent actionEvent) throws IOException {
+        int i=0;
+        for (Games gm :
+                DataBase.getGamesData()) {
 
+            if(gm.getName().equals(GameName.getText()))
+            {
+                DataBase.getGamesData().remove(i);
+            }
+            i++;
+        }
     }
-
-    //public void
 
 }

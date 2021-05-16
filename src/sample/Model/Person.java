@@ -1,7 +1,9 @@
 package sample.Model;
 
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 import java.util.List;
@@ -11,14 +13,27 @@ public class Person {
     private final StringProperty Password;
     private final StringProperty Photo;
 
+    private ObservableList<Games> GameLoginList ;
+
+    public void setGameLoginList(ObservableList<Games> gameLoginList) {
+        GameLoginList = gameLoginList;
+    }
+
+    public ObservableList<Games> getGameLoginList() {
+        return GameLoginList;
+    }
+
     public Person()
     {
-        this(null,null,null);
+        this(null,null,null,null);
     }
-    public Person(String Name,String Password,String Photo) {
+
+    public Person(String Name,String Password,String Photo,ObservableList<Games> GameLoginList) {
         this.Name = new SimpleStringProperty(Name);
         this.Password = new SimpleStringProperty(Password);
         this.Photo = new SimpleStringProperty(Photo);
+        this.GameLoginList = FXCollections.observableArrayList();
+
     }
     // private List<Games> PersonGameList;
 

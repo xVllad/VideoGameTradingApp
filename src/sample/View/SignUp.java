@@ -34,7 +34,7 @@ public class SignUp {
             alert.setTitle("Account  Registration");
             alert.setHeaderText("Account created Successful!");
             alert.showAndWait();
-            DataBase.AddAccount(UserNameField.getText(),PasswordField.getText());
+            DataBase.AddAccount(UserNameField.getText(),PasswordField.getText(),null);
             Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);

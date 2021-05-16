@@ -21,7 +21,6 @@ public class Home implements Initializable {
 
     public ListView<Games> GameListAll;
     public VBox GameListVB;
-    //public ObservableList<Games> Gametest = FXCollections.observableArrayList();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -31,16 +30,6 @@ public class Home implements Initializable {
             e.printStackTrace();
         }
     }
-    /*
-    private void initialize() throws IOException {
-        //System.out.println(DataBase.getPersonData());
-        //GameListAll.getItems().add(new Games("Ana","desc","Type","12"));
-       //Gametest.setItem(DataBase.getGamesData()).toString());
-        //GameListAll.setItems(DataBase.getGamesData());
-        //GameListAll.setCellFactory(param -> new ListCell<Games>());
-
-    }
-     */
     public void getGames() throws IOException
     {
         GameListVB.getChildren().removeAll(GameListVB.getChildren());
@@ -58,6 +47,8 @@ public class Home implements Initializable {
         DataBase.AddGame();
         getGames();
     }
+
+
 
 
 }
