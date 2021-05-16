@@ -1,6 +1,8 @@
 package sample.Model;
 
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.control.Alert;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
@@ -22,7 +24,7 @@ public class DataBase {
     private static Object Person;
 
     private static List<Person> personData = new ArrayList<>();
-    private static List<Games> GameListData = new ArrayList<>();
+    private static ObservableList<Games> GameListData = FXCollections.observableArrayList();
     private static File fileLogin = new File("C:\\Users\\vladb\\Documents\\Java\\Login.xml");
     private static File fileGames = new File("C:\\Users\\vladb\\Documents\\Java\\Games.xml");
 
@@ -31,7 +33,7 @@ public class DataBase {
         return personData;
     }
 
-    public static List<Games> getGamesData() {
+    public static ObservableList<Games> getGamesData() {
         return GameListData;
     }
 
@@ -40,25 +42,29 @@ public class DataBase {
         personData.add(new Person(name,password,null));
         writeXMLPerson();
     }
+    public static void AddGame()
+    {
+        GameListData.add(new Games("Half Life","ceva ceava ceva ceava","Joc", "12"));
+        writeXMLGames();
+    }
 
+
+    public DataBase()
+    {
+
+    }
 
     public static void writeXMLGames()
     {
         try {
             fileGames.createNewFile();
             JAXBContext context = JAXBContext
-                    .newInstance(ListPersonWrap.class);
+                    .newInstance(ListGamesWrap.class);
             Marshaller m = context.createMarshaller();
             m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-
-            // Wrapping our person data.
-            ListPersonWrap wrapper = new ListPersonWrap();
-            wrapper.setPersonLoginCred(personData);
-
-            // Marshalling and saving XML to the file.
+            ListGamesWrap wrapper = new ListGamesWrap();
+            wrapper.setGamesListAll(GameListData);
             m.marshal(wrapper, fileGames);
-
-            // Save the file path to the registry.
             Preferences prefs = Preferences.userNodeForPackage(DataBase.class);
             prefs.put("filePath", fileGames.getPath());
 
@@ -79,15 +85,9 @@ public class DataBase {
                     .newInstance(ListPersonWrap.class);
             Marshaller m = context.createMarshaller();
             m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-
-            // Wrapping our person data.
             ListPersonWrap wrapper = new ListPersonWrap();
             wrapper.setPersonLoginCred(personData);
-
-            // Marshalling and saving XML to the file.
             m.marshal(wrapper, fileLogin);
-
-            // Save the file path to the registry.
             Preferences prefs = Preferences.userNodeForPackage(DataBase.class);
             prefs.put("filePath", fileLogin.getPath());
 
@@ -119,24 +119,13 @@ public class DataBase {
             JAXBContext context = JAXBContext
                     .newInstance(ListPersonWrap.class);
             Unmarshaller um = context.createUnmarshaller();
-
-            // Reading XML from the file and unmarshalling.
             ListPersonWrap wrapper = (ListPersonWrap) um.unmarshal(fileLogin);
-
             personData.clear();
             personData.addAll(wrapper.getPersonLoginCred());
-
-            // Save the file path to the registry.
             setPersonFilePath(fileLogin);
 
-
         } catch (Exception e) { // catches ANY exception
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("Could not load data");
-            alert.setContentText("Could not load data from file:\n" + fileLogin.getPath());
-
-            alert.showAndWait();
+            System.out.println("File Login not Found");
         }
     }
 
@@ -144,15 +133,15 @@ public class DataBase {
     {
         try {
             JAXBContext context = JAXBContext
-                    .newInstance(ListPersonWrap.class);
+                    .newInstance(ListGamesWrap.class);
             Unmarshaller um = context.createUnmarshaller();
-            ListPersonWrap wrapper = (ListPersonWrap) um.unmarshal(fileGames);
-            personData.clear();
-            personData.addAll(wrapper.getPersonLoginCred());
+            ListGamesWrap wrapper = (ListGamesWrap) um.unmarshal(fileGames);
+            GameListData.clear();
+            GameListData.addAll(wrapper.getGamesListAll());
             setPersonFilePath(fileGames);
 
 
-        } catch (Exception e) { // catches ANY exception
+        } catch (Exception e) {
             System.out.println("File Games not Found");
         }
     }

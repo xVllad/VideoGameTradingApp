@@ -30,14 +30,16 @@ public class SignUp {
     {
         if(PasswordField.getText().equals(RePasswordField.getText()))
         {
-
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Account  Registration");
+            alert.setHeaderText("Account created Successful!");
+            alert.showAndWait();
             DataBase.AddAccount(UserNameField.getText(),PasswordField.getText());
             Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
-            //dtBase.writeXMLPerson();
         }
         else
         {
