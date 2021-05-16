@@ -43,6 +43,12 @@ public class DataBase {
         personData.add(new Person(name,password,null));
         writeXMLPerson();
     }
+
+    public static int getLenght()
+    {
+        return GameListData.size();
+    }
+
     public static void AddGame()
     {
         GameListData.add(new Games("Half Life","ceva ceava ceva ceava","Joc", "12"));
