@@ -25,7 +25,7 @@ import sample.View.Login;
 public class DataBase {
     private static Object Person;
 
-    private static List<Person> personData = new ArrayList<>();
+    private static List<Person> personData = new ArrayList<sample.Model.Person>();
     private static ObservableList<Games> GameListData = FXCollections.observableArrayList();
     public static File fileLogin ;
     public static File fileGames ;
