@@ -32,7 +32,7 @@ public class SignUp {
 
 
 
-    public void CreateAccountBtn(javafx.event.ActionEvent event) throws IOException
+    public void CreateAccountBtn(javafx.event.ActionEvent event) throws Exception
     {
         if(PasswordField.getText().equals(RePasswordField.getText()))
         {
@@ -48,8 +48,12 @@ public class SignUp {
             {
                 check = 1;
             }
-            System.out.println(check+"DA");
-            DataBase.AddAccount(UserNameField.getText(),PasswordField.getText(),null,null,check);
+            //System.out.println(check+"DA");
+            TrippleDes td = new TrippleDes();
+
+            String encrypted = td.encrypt(PasswordField.getText());
+
+            DataBase.AddAccount(UserNameField.getText(),encrypted,null,null,check);
             //DataBase.getPersonData().add(new Person(UserNameField.getText(),PasswordField.getText(),null,check));
             Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();

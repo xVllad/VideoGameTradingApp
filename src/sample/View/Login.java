@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -19,12 +20,10 @@ import java.io.IOException;
 import sample.Model.DataBase;
 public class Login {
 
+    public javafx.scene.control.PasswordField PasswordField;
     @FXML
 
     ImageView myImageView;
-
-
-
 
     public TextField LoginField;
     private Stage stage;
@@ -41,18 +40,22 @@ public class Login {
                 stage.show();
     }
 
-    public void OnClickEventLogin(javafx.event.ActionEvent event) throws IOException {
+    public void OnClickEventLogin(javafx.event.ActionEvent event) throws Exception {
         int i=0;
         for (Person pers : DataBase.getPersonData()) {
             if (pers.getName().equals(LoginField.getText())) {
-                username = LoginField.getText();
-                Parent root = FXMLLoader.load(getClass().getResource("UserControl.fxml"));
-                stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                scene = new Scene(root);
-                stage.setScene(scene);
-                stage.show();
-                DataBase.indexLogin = i;
-                break;
+                TrippleDes td = new TrippleDes();
+                String decrypted = td.decrypt(DataBase.getPersonData().get(i).getPassword());
+                if(PasswordField.getText().equals(decrypted)) {
+                    username = LoginField.getText();
+                    Parent root = FXMLLoader.load(getClass().getResource("UserControl.fxml"));
+                    stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    scene = new Scene(root);
+                    stage.setScene(scene);
+                    stage.show();
+                    DataBase.indexLogin = i;
+                    break;
+                }
             }
             i++;
         }

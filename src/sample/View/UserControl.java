@@ -21,10 +21,12 @@ public class UserControl implements Initializable {
     @FXML
     private Button btnHome;
     @FXML
-    private AnchorPane LoadFXMLScene;
+    public AnchorPane LoadFXMLScene;
     private Stage stage;
     private Scene scene;
     private Parent root;
+
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -40,17 +42,24 @@ public class UserControl implements Initializable {
 
     public void ButtonHome(javafx.event.ActionEvent event) throws IOException {
 
-        AnchorPane obj = FXMLLoader.load(getClass().getResource("Home.fxml"));
-        LoadFXMLScene.getChildren().setAll(obj);
+        btn2();
 
     }
     public void ButtonProfile(javafx.event.ActionEvent event) throws IOException {
 
-        AnchorPane obj = FXMLLoader.load(getClass().getResource("Profile.fxml"));
-        LoadFXMLScene.getChildren().setAll(obj);
+        btn();
 
     }
 
+    public void btn2() throws IOException {
+        AnchorPane obj = FXMLLoader.load(getClass().getResource("Home.fxml"));
+        LoadFXMLScene.getChildren().setAll(obj);
+    }
+
+    public void btn() throws IOException {
+        AnchorPane obj = FXMLLoader.load(getClass().getResource("Profile.fxml"));
+        LoadFXMLScene.getChildren().setAll(obj);
+    }
 
 
 }

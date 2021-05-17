@@ -35,6 +35,7 @@ public class Home implements Initializable {
             e.printStackTrace();
         }
     }
+
     public void getGames() throws IOException
     {
         GameListVB.getChildren().removeAll(GameListVB.getChildren());

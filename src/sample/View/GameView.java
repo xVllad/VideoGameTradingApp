@@ -3,8 +3,10 @@ package sample.View;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import sample.Model.DataBase;
 import sample.Model.Games;
 import sample.Model.Person;
@@ -35,19 +37,18 @@ public class GameView implements Initializable {
     }
 
     public void BuyGame(ActionEvent actionEvent) throws IOException {
-        System.out.println(ind+"NU");
-        int i=0,j=0;
+        System.out.println(ind + "NU");
+        int i = 0, j = 0;
 
-        gmList.add(new Games(DataBase.getGamesData().get(ind).getName(),DataBase.getGamesData().get(ind).getDescription(),DataBase.getGamesData().get(ind).getPhoto(),DataBase.getGamesData().get(ind).getPrice(),null));
-        HereList1item.add(new Games(DataBase.getGamesData().get(ind).getName(),DataBase.getGamesData().get(ind).getDescription(),DataBase.getGamesData().get(ind).getPhoto(),DataBase.getGamesData().get(ind).getPrice(),DataBase.getGamesData().get(ind).getUserName()));
+        gmList.add(new Games(DataBase.getGamesData().get(ind).getName(), DataBase.getGamesData().get(ind).getDescription(), DataBase.getGamesData().get(ind).getPhoto(), DataBase.getGamesData().get(ind).getPrice(), null));
+        HereList1item.add(new Games(DataBase.getGamesData().get(ind).getName(), DataBase.getGamesData().get(ind).getDescription(), DataBase.getGamesData().get(ind).getPhoto(), DataBase.getGamesData().get(ind).getPrice(), DataBase.getGamesData().get(ind).getUserName()));
         for (Person prs :
                 DataBase.getPersonData()) {
-            if(prs.getName().equals(HereList1item.get(0).getUserName())) {
-                j=0;
+            if (prs.getName().equals(HereList1item.get(0).getUserName())) {
+                j = 0;
                 for (Games gms :
                         DataBase.getPersonData().get(i).getGameLoginList()) {
-                    if(gms.getName().equals(DataBase.getGamesData().get(ind).getName()))
-                    {
+                    if (gms.getName().equals(DataBase.getGamesData().get(ind).getName())) {
                         DataBase.getPersonData().get(i).getGameLoginList().remove(j);
                         break;
                     }
@@ -60,6 +61,8 @@ public class GameView implements Initializable {
         DataBase.getGamesData().remove(ind);
         DataBase.writeXMLGames();
         DataBase.writeXMLPerson();
+
+
     }
 
 
