@@ -6,6 +6,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import sample.Model.DataBase;
 import sample.Model.Games;
@@ -25,6 +27,7 @@ public class GameView implements Initializable {
     public ObservableList<Games> HereList1item = FXCollections.observableArrayList();
     public Label GameAuthor;
     public int ind;
+    public ImageView PhotoGame;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -33,6 +36,8 @@ public class GameView implements Initializable {
         GameDesc.setText(DataBase.getGamesData().get(index).getDescription());
         GamePrice.setText(DataBase.getGamesData().get(index).getPrice());
         GameAuthor.setText(DataBase.getGamesData().get(index).getUserName());
+
+
         ind = index;
     }
 

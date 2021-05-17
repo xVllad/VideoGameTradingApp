@@ -42,12 +42,13 @@
             <Font size="36.0" />
          </font>
       </Button>
-      <Button layoutX="16.0" layoutY="673.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="588.0" text="Add Photo" />
+      <Button onAction="#AddPhoto" layoutX="16.0" layoutY="673.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="588.0" text="Add Photo" />
       <Label layoutX="329.0" layoutY="527.0" text="(Euro)" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
       <TextArea fx:id="GameDescE" layoutX="17.0" layoutY="268.0" prefHeight="141.0" prefWidth="588.0" />
+      <Label fx:id="PhotoPath" visible="false" layoutX="14.0" layoutY="967.0" />
    </children>
 </AnchorPane>

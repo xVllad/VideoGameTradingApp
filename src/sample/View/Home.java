@@ -26,11 +26,12 @@ public class Home implements Initializable {
     public ListView<Games> GameListAll;
     public VBox GameListVB;
     public TextField SearchField;
-
+    long lastRefreshTime = 0;
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         try {
             getGames();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
