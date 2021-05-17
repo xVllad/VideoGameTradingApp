@@ -21,7 +21,7 @@ public class GameViewCol implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         GameNameCol.setText(DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList().get(index).getName());
         GameDescCol.setText(DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList().get(index).getDescription());
-        //GameTypeCol.setText(DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList().get(index).getType());
+
         GamePriceCol.setText(DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList().get(index).getPrice());
         ind = index;
     }
