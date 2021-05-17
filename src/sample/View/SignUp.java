@@ -30,44 +30,51 @@ public class SignUp {
     private DataBase dtBase;
     private int check=-1;
 
-
-
     public void CreateAccountBtn(javafx.event.ActionEvent event) throws Exception
     {
-        if(PasswordField.getText().equals(RePasswordField.getText()))
-        {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Account  Registration");
-            alert.setHeaderText("Account created Successful!");
-            alert.showAndWait();
-            if(checkBuy.isSelected())
+        int ok=0;
+        for (Person prs :
+                DataBase.getPersonData()) {
+            if(prs.getName().equals(UserNameField.getText()))
             {
-                check = 0;
-            }
-            else if(checkSel.isSelected())
-            {
-                check = 1;
-            }
-            //System.out.println(check+"DA");
-            TrippleDes td = new TrippleDes();
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Account  Registration");
+                alert.setHeaderText("Account Already Exist!");
+                alert.showAndWait();
+                ok = 1;
 
-            String encrypted = td.encrypt(PasswordField.getText());
-
-            DataBase.AddAccount(UserNameField.getText(),encrypted,null,null,check);
-            //DataBase.getPersonData().add(new Person(UserNameField.getText(),PasswordField.getText(),null,check));
-            Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
+            }
         }
-        else
-        {
+        if(ok == 0) {
+            if (PasswordField.getText().equals(RePasswordField.getText())) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Account  Registration");
+                alert.setHeaderText("Account created Successful!");
+                alert.showAndWait();
+                if (checkBuy.isSelected()) {
+                    check = 0;
+                } else if (checkSel.isSelected()) {
+                    check = 1;
+                }
+                //System.out.println(check+"DA");
+                TrippleDes td = new TrippleDes();
 
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText("Password not match!!!");
-            alert.showAndWait();
+                String encrypted = td.encrypt(PasswordField.getText());
+
+                DataBase.AddAccount(UserNameField.getText(), encrypted, null, null, check);
+                //DataBase.getPersonData().add(new Person(UserNameField.getText(),PasswordField.getText(),null,check));
+                Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+                stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            } else {
+
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Password not match!!!");
+                alert.showAndWait();
+            }
         }
     }
 

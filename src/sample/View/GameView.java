@@ -42,7 +42,7 @@ public class GameView implements Initializable {
     }
 
     public void BuyGame(ActionEvent actionEvent) throws IOException {
-        System.out.println(ind + "NU");
+        //System.out.println(ind + "NU");
         int i = 0, j = 0;
 
         gmList.add(new Games(DataBase.getGamesData().get(ind).getName(), DataBase.getGamesData().get(ind).getDescription(), DataBase.getGamesData().get(ind).getPhoto(), DataBase.getGamesData().get(ind).getPrice(), null));
