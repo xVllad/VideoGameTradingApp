@@ -26,8 +26,7 @@ public class AddGameToSell {
 
     public void AddGameToList(ActionEvent event) throws IOException {
         if(GameNameE.getText() != null && GameDescE.getText() != null && GameTypeE.getText() != null && GamePriceE.getText() != null) {
-            //DataBase.getGamesData().add(new Games(GameNameE.getText(), GameDescE.getText(), GameTypeE.getText(), GamePriceE.getText(),DataBase.getPersonData().get(DataBase.indexLogin).getName()));
-            //DataBase.writeXMLGames();
+
             gls.add(new Games(GameNameE.getText(), GameDescE.getText(), GameTypeE.getText(), GamePriceE.getText(),null));
             for (Person ps :
                     DataBase.getPersonData()) {

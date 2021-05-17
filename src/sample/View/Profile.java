@@ -51,19 +51,19 @@ public class Profile implements Initializable {
 
     public void getCollectionSeller() throws IOException
     {
-
+        GameColectionList.getChildren().removeAll(GameColectionList.getChildren());
         Node[] nd = new Node[DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList().size()];
         for(int i=0 ; i<nd.length;i++)
         {
-            GameViewCol.index = i;
-            nd[i] = (Node) FXMLLoader.load(getClass().getResource("GameViewCol.fxml"));
+            GameViewSeller.index = i;
+            nd[i] = (Node) FXMLLoader.load(getClass().getResource("GameViewSeller.fxml"));
             GameColectionList.getChildren().add(nd[i]);
         }
     }
 
     public void getCollectionBuyer() throws IOException
     {
-
+        GameColectionList.getChildren().removeAll(GameColectionList.getChildren());
         Node[] nd = new Node[DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList().size()];
         for(int i=0 ; i<nd.length;i++)
         {

@@ -25,6 +25,9 @@ public class GameViewCol implements Initializable {
     }
 
     public void RemoveFromCol(ActionEvent event) {
-
+        System.out.println(index);
+        DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList().remove(index);
+        DataBase.writeXMLPerson();
+        //DataBase.update();
     }
 }

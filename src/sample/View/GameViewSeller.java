@@ -24,12 +24,16 @@ public class GameViewSeller implements Initializable {
     }
 
     public void RemoveFromCol(ActionEvent event) {
-
+        System.out.println(index);
+        DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList().remove(index);
+        DataBase.writeXMLPerson();
+        //DataBase.update();
     }
 
     public void SellFromCol(ActionEvent event) {
         DataBase.getGamesData().add(AddGameToSell.gls.get(index));
         DataBase.writeXMLGames();
+        //DataBase.update();
     }
 
 

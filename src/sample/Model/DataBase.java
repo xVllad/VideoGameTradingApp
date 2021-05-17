@@ -17,6 +17,7 @@ import sample.Main;
 import sample.Model.Person;
 import sample.Model.Games;
 import sample.Model.ListPersonWrap;
+import sample.View.AddGameToSell;
 import sample.View.SignUp;
 import sample.View.Login;
 
@@ -55,7 +56,14 @@ public class DataBase {
         writeXMLGames();
     }
 
-
+    public static void update()
+    {
+        AddGameToSell.gls.removeAll();
+        for (Games gs :
+                getPersonData().get(indexLogin).getGameLoginList()) {
+            AddGameToSell.gls.add(gs);
+        }
+    }
 
 
     public static void writeXMLGames()
