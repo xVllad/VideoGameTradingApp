@@ -9,7 +9,7 @@
 
 <AnchorPane prefHeight="1000.0" prefWidth="1300.0" style="-fx-background-color: #2A1D41;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.View.Home">
    <children>
-      <TextField layoutX="50.0" layoutY="40.0" prefHeight="32.0" prefWidth="210.0" />
+      <TextField fx:id="SearchField" onKeyPressed="#Search" layoutX="50.0" layoutY="40.0" prefHeight="32.0" prefWidth="210.0" />
       <ScrollPane layoutX="50.0" layoutY="200.0" prefHeight="741.0" prefWidth="1215.0" style="-fx-background-color: #FFFF;">
          <content>
             <VBox fx:id="GameListVB" prefHeight="850.0" prefWidth="1200.0" style="-fx-background-color: #FFFF;" />
