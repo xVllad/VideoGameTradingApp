@@ -36,7 +36,7 @@ public class SignUp {
     {
         if(PasswordField.getText().equals(RePasswordField.getText()))
         {
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Account  Registration");
             alert.setHeaderText("Account created Successful!");
             alert.showAndWait();

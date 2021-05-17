@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -47,6 +48,10 @@ public class Login {
                 TrippleDes td = new TrippleDes();
                 String decrypted = td.decrypt(DataBase.getPersonData().get(i).getPassword());
                 if(PasswordField.getText().equals(decrypted)) {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Account  Registration");
+                    alert.setHeaderText("Login Succeed!!!");
+                    alert.showAndWait();
                     username = LoginField.getText();
                     Parent root = FXMLLoader.load(getClass().getResource("UserControl.fxml"));
                     stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -56,7 +61,15 @@ public class Login {
                     DataBase.indexLogin = i;
                     break;
                 }
+                else
+                {
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Error");
+                    alert.setHeaderText("Wrong Password or UserName!!!");
+                    alert.showAndWait();
+                }
             }
+
             i++;
         }
 
