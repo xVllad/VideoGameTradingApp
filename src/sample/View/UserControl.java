@@ -38,21 +38,6 @@ public class UserControl implements Initializable {
 
     }
 
-    public void setBtnHome() throws IOException {
-        /*
-        Parent root = FXMLLoader.load(getClass().getResource("UserControl.fxml"));
-        Stage = (Stage)((Node).getSource()).getScene().getWindow();
-
-         */
-        /*
-        System.out.println("Ana are mere");
-        Parent HomeRoot = FXMLLoader.load(getClass().getResource("View.SignUp.fxml"));
-        Stage window = (Stage) btnHome.getScene().getWindow();
-        window.setScene(new Scene(HomeRoot,1600,1000));
-
-         */
-    }
-
     public void ButtonHome(javafx.event.ActionEvent event) throws IOException {
 
         AnchorPane obj = FXMLLoader.load(getClass().getResource("Home.fxml"));

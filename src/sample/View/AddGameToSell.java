@@ -25,17 +25,15 @@ public class AddGameToSell {
     public static ObservableList<Games> gls = FXCollections.observableArrayList();
 
     public void AddGameToList(ActionEvent event) throws IOException {
-        if(GameNameE.getText() != null && GameDescE.getText() != null && GameTypeE.getText() != null && GamePriceE.getText() != null) {
+        if(GameNameE.getText() != null && GameDescE.getText() != null && GamePriceE.getText() != null) {
 
-            gls.add(new Games(GameNameE.getText(), GameDescE.getText(), GameTypeE.getText(), GamePriceE.getText(),null));
+            gls.add(new Games(GameNameE.getText(), GameDescE.getText(), null, GamePriceE.getText(),DataBase.getPersonData().get(DataBase.indexLogin).getName()));
             for (Person ps :
                     DataBase.getPersonData()) {
                if(ps.getName().equals(Login.username))
                 {
                     ps.setGameLoginList(gls);
                 }
-
-
             }
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.close();

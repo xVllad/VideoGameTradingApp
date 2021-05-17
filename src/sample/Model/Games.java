@@ -12,7 +12,7 @@ public class Games {
 
     private final StringProperty name;
     private final StringProperty Description;
-    private final StringProperty Type;
+    private final StringProperty Photo;
     private final StringProperty price;
     private final StringProperty UserName;
 
@@ -23,10 +23,10 @@ public class Games {
 
 
 
-    public Games(String name, String description, String type, String price,String UserName) {
+    public Games(String name, String description, String photo, String price,String UserName) {
         this.name = new SimpleStringProperty(name);
         this.Description = new SimpleStringProperty(description);
-        this.Type = new SimpleStringProperty(type);
+        this.Photo = new SimpleStringProperty(photo);
         this.price = new SimpleStringProperty(price);
         this.UserName = new SimpleStringProperty(UserName);
     }
@@ -55,16 +55,16 @@ public class Games {
         this.Description.set(description);
     }
 
-    public String getType() {
-        return Type.get();
+    public String getPhoto() {
+        return Photo.get();
     }
 
-    public StringProperty typeProperty() {
-        return Type;
+    public StringProperty photoProperty() {
+        return Photo;
     }
 
-    public void setType(String type) {
-        this.Type.set(type);
+    public void setPhoto(String photo) {
+        this.Photo.set(photo);
     }
 
     public String getPrice() {
@@ -91,10 +91,6 @@ public class Games {
         this.UserName.set(userName);
     }
 
-    @Override
-    public String toString()
-    {
-        return String.format(getName() + " " + getDescription() + " " + getType() + " " + getPrice());
-    }
+
 
 }

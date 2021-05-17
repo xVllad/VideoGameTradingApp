@@ -33,7 +33,6 @@ public class Home implements Initializable {
     public void getGames() throws IOException
     {
         GameListVB.getChildren().removeAll(GameListVB.getChildren());
-        System.out.println(DataBase.getGamesData().size());
         Node[] nd = new Node[DataBase.getGamesData().size()];
         for(int i=0 ; i<nd.length;i++)
         {

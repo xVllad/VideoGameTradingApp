@@ -18,17 +18,7 @@
                         <Font size="24.0" />
                      </font>
                   </Button>
-                  <Button layoutX="10.0" layoutY="10.0" onAction="#ButtonHome" mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" stylesheets="@../CSS/CSSStylePackeg.css" text="HOME" textFill="WHITE">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="10.0" layoutY="111.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" stylesheets="@../CSS/CSSStylePackeg.css" text="Home3" textFill="WHITE">
-                     <font>
-                        <Font size="24.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="10.0" layoutY="212.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="300.0" stylesheets="@../CSS/CSSStylePackeg.css" text="Home4" textFill="WHITE">
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#ButtonHome" prefHeight="100.0" prefWidth="300.0" stylesheets="@../CSS/CSSStylePackeg.css" text="HOME" textFill="WHITE">
                      <font>
                         <Font size="24.0" />
                      </font>

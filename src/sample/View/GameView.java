@@ -17,46 +17,50 @@ public class GameView implements Initializable {
 
     public Label GameName;
     public Label GameDesc;
-    public Label GameType;
     public Label GamePrice;
     public static int index;
     public static ObservableList<Games> gmList = FXCollections.observableArrayList();
-    public  ObservableList<Games> HereList1item = FXCollections.observableArrayList();
+    public ObservableList<Games> HereList1item = FXCollections.observableArrayList();
+    public Label GameAuthor;
+    public int ind;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
         GameName.setText(DataBase.getGamesData().get(index).getName());
         GameDesc.setText(DataBase.getGamesData().get(index).getDescription());
-        GameType.setText(DataBase.getGamesData().get(index).getType());
         GamePrice.setText(DataBase.getGamesData().get(index).getPrice());
+        GameAuthor.setText(DataBase.getGamesData().get(index).getUserName());
+        ind = index;
     }
 
     public void BuyGame(ActionEvent actionEvent) throws IOException {
+        System.out.println(ind+"NU");
         int i=0,j=0;
-        gmList.add(new Games(DataBase.getGamesData().get(index).getName(),DataBase.getGamesData().get(index).getDescription(),DataBase.getGamesData().get(index).getType(),DataBase.getGamesData().get(index).getPrice(),null));
-        HereList1item.add(new Games(DataBase.getGamesData().get(index).getName(),DataBase.getGamesData().get(index).getDescription(),DataBase.getGamesData().get(index).getType(),DataBase.getGamesData().get(index).getPrice(),DataBase.getGamesData().get(index).getUserName()));
+
+        gmList.add(new Games(DataBase.getGamesData().get(ind).getName(),DataBase.getGamesData().get(ind).getDescription(),DataBase.getGamesData().get(ind).getPhoto(),DataBase.getGamesData().get(ind).getPrice(),null));
+        HereList1item.add(new Games(DataBase.getGamesData().get(ind).getName(),DataBase.getGamesData().get(ind).getDescription(),DataBase.getGamesData().get(ind).getPhoto(),DataBase.getGamesData().get(ind).getPrice(),DataBase.getGamesData().get(ind).getUserName()));
         for (Person prs :
                 DataBase.getPersonData()) {
-                if(prs.getName().equals(HereList1item.get(0).getUserName())) {
-                    j=0;
-                    for (Games gms :
-                            DataBase.getPersonData().get(i).getGameLoginList()) {
-                        if(gms.getName().equals(DataBase.getGamesData().get(index).getName()))
-                        {
-                            DataBase.getPersonData().get(i).getGameLoginList().remove(j);
-                            break;
-                        }
-                        j++;
+            if(prs.getName().equals(HereList1item.get(0).getUserName())) {
+                j=0;
+                for (Games gms :
+                        DataBase.getPersonData().get(i).getGameLoginList()) {
+                    if(gms.getName().equals(DataBase.getGamesData().get(ind).getName()))
+                    {
+                        DataBase.getPersonData().get(i).getGameLoginList().remove(j);
+                        break;
                     }
-                    break;
+                    j++;
                 }
+                break;
+            }
         }
         DataBase.getPersonData().get(DataBase.indexLogin).setGameLoginList(gmList);
-        DataBase.getGamesData().remove(index);
+        DataBase.getGamesData().remove(ind);
         DataBase.writeXMLGames();
         DataBase.writeXMLPerson();
-
     }
+
 
 }
