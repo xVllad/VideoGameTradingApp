@@ -72,13 +72,16 @@ public class Login {
 
             i++;
         }
-
+        /*
         for (Games gms:
              DataBase.getPersonData().get(i).getGameLoginList()) {
             GameView.gmList.add(gms);
             AddGameToSell.gls.add(gms);
         }
 
+         */
 
     }
+
+
 }

@@ -11,6 +11,7 @@ public class Person {
     private final StringProperty Password;
     private final StringProperty Photo;
     private final IntegerProperty Type;
+    private final FloatProperty Money;
 
     private ObservableList<Games> GameLoginList ;
 
@@ -24,15 +25,16 @@ public class Person {
 
     public Person()
     {
-        this(null,null,null,null,0);
+        this(null,null,null,null,0,0);
     }
 
-    public Person(String Name,String Password,String Photo,ObservableList<Games> GameLoginList,int Type) {
+    public Person(String Name,String Password,String Photo,ObservableList<Games> GameLoginList,int Type,float Money) {
         this.Name = new SimpleStringProperty(Name);
         this.Password = new SimpleStringProperty(Password);
         this.Photo = new SimpleStringProperty(Photo);
         this.GameLoginList = FXCollections.observableArrayList();
         this.Type = new SimpleIntegerProperty(Type);
+        this.Money = new SimpleFloatProperty(Money);
 
     }
     // private List<Games> PersonGameList;
@@ -84,5 +86,16 @@ public class Person {
 
     public void setType(int type) {
         this.Type.set(type);
+    }
+    public float getMoney() {
+        return Money.get();
+    }
+
+    public FloatProperty moneyProperty() {
+        return Money;
+    }
+
+    public void setMoney(float money) {
+        this.Money.set(money);
     }
 }

@@ -40,9 +40,9 @@ public class DataBase {
         return GameListData;
     }
 
-    public static void AddAccount(String name,String password,ObservableList<Games> hl,String ph,int check)
+    public static void AddAccount(String name,String password,ObservableList<Games> hl,String ph,int check,int mn)
     {
-        personData.add(new Person(name,password,ph,hl,check));
+        personData.add(new Person(name,password,ph,hl,check,mn));
         writeXMLPerson();
     }
 
@@ -58,11 +58,14 @@ public class DataBase {
 
     public static void update()
     {
+        /*
         AddGameToSell.gls.removeAll();
         for (Games gs :
                 getPersonData().get(indexLogin).getGameLoginList()) {
             AddGameToSell.gls.add(gs);
         }
+
+         */
     }
 
 

@@ -24,9 +24,12 @@ public class GameViewCol implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         GameNameCol.setText(DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList().get(index).getName());
         GameDescCol.setText(DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList().get(index).getDescription());
-        GamePriceCol.setText(DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList().get(index).getPrice());
-        Image img = new Image(getClass().getResourceAsStream(DataBase.getGamesData().get(index).getPhoto()));
+       // GamePriceCol.setText(Float.toString(DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList().get(index).getPrice()));
+        Image img = new Image(DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList().get(ind).getPhoto());
         PhotoGame.setImage(img);
+
+       //Image img = new Image(getClass().getResourceAsStream(DataBase.getGamesData().get(index).getPhoto()));
+        //PhotoGame.setImage(img);
         ind = index;
     }
 

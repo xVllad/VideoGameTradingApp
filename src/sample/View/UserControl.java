@@ -1,5 +1,6 @@
 package sample.View;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -12,7 +13,6 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import sample.Main;
 
-import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -62,4 +62,15 @@ public class UserControl implements Initializable {
     }
 
 
+    public void SignOutbtn(ActionEvent event) throws IOException {
+
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.close();
+        Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+        Stage primaryStage = new Stage();
+        primaryStage.setTitle("VideoGameTrade");
+        primaryStage.setScene(new Scene(root, 1600, 1000));
+        primaryStage.show();
+        primaryStage.setResizable(false);
+    }
 }

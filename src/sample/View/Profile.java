@@ -23,11 +23,13 @@ public class Profile implements Initializable {
     public VBox GameColectionList;
     public Label UserName;
     public static String username;
+    public Label money;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         try {
             UserName.setText(Login.username);
+            money.setText(Float.toString(DataBase.getPersonData().get(DataBase.indexLogin).getMoney()));
             GameColectionList.getChildren().removeAll(GameColectionList.getChildren());
             if(DataBase.getPersonData().get(DataBase.indexLogin).getType() == 0)
             {
@@ -73,4 +75,10 @@ public class Profile implements Initializable {
         }
     }
 
+    public void AddMoney(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("AddMoney.fxml"));
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root,600,300));
+        stage.show();
+    }
 }

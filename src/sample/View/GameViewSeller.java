@@ -27,7 +27,7 @@ public class GameViewSeller implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         GameNameSel.setText(DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList().get(index).getName());
         GameDescSel.setText(DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList().get(index).getDescription());
-        GamePriceSel.setText(DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList().get(index).getPrice());
+        GamePriceSel.setText(Float.toString(DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList().get(index).getPrice()));
 /*
         System.out.println(path);
        // path = DataBase.getGamesData().get(index).getPhoto();
@@ -40,18 +40,21 @@ public class GameViewSeller implements Initializable {
 
     public void RemoveFromCol(ActionEvent event) {
         System.out.println(ind);
-        DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList().remove(ind);
 
         int i=0;
-        for (Games gms :
-                DataBase.getGamesData()) {
-            if(gms.getName().equals(DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList().get(ind).getName()))
+
+        for (Games gms:
+             DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList()) {
+            if(gms.getName().equals(DataBase.getGamesData().get(ind).getName()))
             {
                 DataBase.getGamesData().remove(i);
+                break;
             }
             i++;
         }
+        DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList().remove(ind);
         DataBase.writeXMLPerson();
+        DataBase.writeXMLGames();
     }
 
     public void SellFromCol(ActionEvent event) {

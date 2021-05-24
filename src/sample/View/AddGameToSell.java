@@ -1,50 +1,60 @@
 package sample.View;
 
-import javafx.animation.ParallelTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import sample.Model.DataBase;
 import sample.Model.Games;
-import sample.Model.Person;
 
-import javax.swing.*;
-import javax.swing.filechooser.FileSystemView;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class AddGameToSell {
+import org.apache.commons.lang.math.NumberUtils;
+
+public class AddGameToSell implements Initializable {
     public TextField GameNameE;
     public TextField GameTypeE;
     public TextField GamePriceE;
     public TextArea GameDescE;
     public static ObservableList<Games> gls = FXCollections.observableArrayList();
     public Label PhotoPath;
+    public Label lblGamePrice;
+    public Label lblPriceType;
+    private float pr=0;
+
 
     public void AddGameToList(ActionEvent event) throws IOException {
-        if(GameNameE.getText() != null && GameDescE.getText() != null && GamePriceE.getText() != null) {
-
-            gls.add(new Games(GameNameE.getText(), GameDescE.getText(), PhotoPath.getText(), GamePriceE.getText(),DataBase.getPersonData().get(DataBase.indexLogin).getName()));
-            for (Person ps :
-                    DataBase.getPersonData()) {
-               if(ps.getName().equals(Login.username))
-                {
-                    ps.setGameLoginList(gls);
+        if (NumberUtils.isNumber(GamePriceE.getText())) {
+            if (GameNameE.getText() != null && GameDescE.getText() != null) {
+                if (GamePriceE.getText().equals("")) {
+                    pr = 0;
+                } else {
+                    pr = Float.parseFloat(GamePriceE.getText());
                 }
+                DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList().add(new Games(GameNameE.getText(), GameDescE.getText(), PhotoPath.getText(), pr, DataBase.getPersonData().get(DataBase.indexLogin).getName()));
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.close();
+
+
+                DataBase.writeXMLPerson();
             }
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.close();
-            DataBase.writeXMLPerson();
+        }
+        else
+        {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Wrong Price!!!");
+            alert.showAndWait();
         }
     }
 
@@ -52,5 +62,15 @@ public class AddGameToSell {
         Stage stg = new Stage();
         File fl = new FileChooser().showOpenDialog(stg);
         PhotoPath.setText(fl.getPath());
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        if(DataBase.getPersonData().get(DataBase.indexLogin).getType() == 0)
+        {
+            lblGamePrice.setVisible(false);
+            GamePriceE.setVisible(false);
+            lblPriceType.setVisible(false);
+        }
     }
 }

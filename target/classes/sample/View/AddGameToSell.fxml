@@ -32,7 +32,7 @@
             <Font size="24.0" />
          </font>
       </TextField>
-      <Label layoutX="17.0" layoutY="527.0" text="Game Price :" textFill="WHITE">
+      <Label fx:id="lblGamePrice" layoutX="17.0" layoutY="527.0" text="Game Price :" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
@@ -43,7 +43,7 @@
          </font>
       </Button>
       <Button onAction="#AddPhoto" layoutX="16.0" layoutY="673.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="588.0" text="Add Photo" />
-      <Label layoutX="329.0" layoutY="527.0" text="(Euro)" textFill="WHITE">
+      <Label fx:id="lblPriceType" layoutX="329.0" layoutY="527.0" text="(Euro)" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>

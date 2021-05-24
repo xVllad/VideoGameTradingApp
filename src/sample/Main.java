@@ -8,7 +8,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import sample.Model.DataBase;
+import sample.Model.Games;
 import sample.Model.Person;
+import sample.View.AddGameToSell;
+import sample.View.Profile;
 import sun.security.util.Password;
 import sample.Model.DataBase;
 import javax.naming.Name;
@@ -24,9 +27,10 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("View/Login.fxml"));
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("VideoGameTrade");
         primaryStage.setScene(new Scene(root, 1600, 1000));
         primaryStage.show();
+        primaryStage.setResizable(false);
         JFileChooser fr = new JFileChooser();
         FileSystemView fw = fr.getFileSystemView();
         DataBase.fileLogin = new File(fw.getDefaultDirectory() + "\\Java\\Login.xml");
@@ -34,7 +38,14 @@ public class Main extends Application {
         System.out.println(DataBase.fileLogin);
         DataBase.readXMLPerson();
         DataBase.readXMLGames();
+        /*
+        for (Games gm:
+                DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList()) {
+            AddGameToSell.gls.addAll(gm);
+        }
 
+         */
+        //System.out.println(DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList().get(0).getName());
 
     }
 

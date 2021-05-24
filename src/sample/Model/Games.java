@@ -1,5 +1,7 @@
 package sample.Model;
 
+import javafx.beans.property.SimpleFloatProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import sun.security.krb5.internal.crypto.Des;
@@ -13,21 +15,21 @@ public class Games {
     private final StringProperty name;
     private final StringProperty Description;
     private final StringProperty Photo;
-    private final StringProperty price;
+    private final SimpleFloatProperty price;
     private final StringProperty UserName;
 
     public Games()
     {
-        this(null,null,null,null,null);
+        this(null,null,null,0,null);
     }
 
 
 
-    public Games(String name, String description, String photo, String price,String UserName) {
+    public Games(String name, String description, String photo, float price,String UserName) {
         this.name = new SimpleStringProperty(name);
         this.Description = new SimpleStringProperty(description);
         this.Photo = new SimpleStringProperty(photo);
-        this.price = new SimpleStringProperty(price);
+        this.price = new SimpleFloatProperty(price);
         this.UserName = new SimpleStringProperty(UserName);
     }
 
@@ -67,15 +69,15 @@ public class Games {
         this.Photo.set(photo);
     }
 
-    public String getPrice() {
+    public float getPrice() {
         return price.get();
     }
 
-    public StringProperty priceProperty() {
+    public SimpleFloatProperty priceProperty() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(float price) {
         this.price.set(price);
     }
 
