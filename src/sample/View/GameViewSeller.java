@@ -9,7 +9,9 @@ import sample.Model.DataBase;
 import sample.Model.Games;
 import sample.Model.Person;
 
+import java.io.File;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class GameViewSeller implements Initializable {
@@ -28,13 +30,10 @@ public class GameViewSeller implements Initializable {
         GameNameSel.setText(DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList().get(index).getName());
         GameDescSel.setText(DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList().get(index).getDescription());
         GamePriceSel.setText(Float.toString(DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList().get(index).getPrice()));
-/*
-        System.out.println(path);
-       // path = DataBase.getGamesData().get(index).getPhoto();
-        System.out.println("C:\\Users\\vladb\\Pictures");
-        Image img = new Image(path);
-        GamePhoto.setImage(img);
-*/
+        if(!DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList().get(index).getPhoto().equals("")) {
+            Image img = new Image(DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList().get(index).getPhoto());
+            GamePhoto.setImage(img);
+        }
         ind = index;
     }
 

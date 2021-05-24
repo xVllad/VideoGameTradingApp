@@ -49,6 +49,15 @@ public class AddGameToSell implements Initializable {
                 DataBase.writeXMLPerson();
             }
         }
+        else if(DataBase.getPersonData().get(DataBase.indexLogin).getType() == 0)
+        {
+
+            DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList().add(new Games(GameNameE.getText(), GameDescE.getText(), PhotoPath.getText(), 0, DataBase.getPersonData().get(DataBase.indexLogin).getName()));
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.close();
+
+            DataBase.writeXMLPerson();
+        }
         else
         {
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -61,7 +70,7 @@ public class AddGameToSell implements Initializable {
     public void AddPhoto(ActionEvent event) {
         Stage stg = new Stage();
         File fl = new FileChooser().showOpenDialog(stg);
-        PhotoPath.setText(fl.getPath());
+        PhotoPath.setText(fl.toURI().toString());
     }
 
     @Override

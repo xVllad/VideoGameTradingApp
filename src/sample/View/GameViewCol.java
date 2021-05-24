@@ -8,6 +8,7 @@ import javafx.scene.image.ImageView;
 import sample.Model.DataBase;
 
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class GameViewCol implements Initializable {
@@ -25,8 +26,12 @@ public class GameViewCol implements Initializable {
         GameNameCol.setText(DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList().get(index).getName());
         GameDescCol.setText(DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList().get(index).getDescription());
        // GamePriceCol.setText(Float.toString(DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList().get(index).getPrice()));
-        Image img = new Image(DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList().get(ind).getPhoto());
-        PhotoGame.setImage(img);
+
+        //System.out.println(DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList().get(index).getPhoto());
+        if(!DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList().get(index).getPhoto().equals("")) {
+            Image img = new Image(DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList().get(index).getPhoto());
+            PhotoGame.setImage(img);
+        }
 
        //Image img = new Image(getClass().getResourceAsStream(DataBase.getGamesData().get(index).getPhoto()));
         //PhotoGame.setImage(img);

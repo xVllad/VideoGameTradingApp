@@ -16,7 +16,7 @@
             <VBox fx:id="GameColectionList" prefHeight="650.0" prefWidth="1200.0" style="-fx-background-color: #FFFF;" />
          </content>
       </ScrollPane>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="551.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="UserAvatar" fitHeight="150.0" fitWidth="200.0" layoutX="551.0" layoutY="71.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Image/default.jpg" />
          </image></ImageView>
@@ -37,5 +37,7 @@
       </Label>
       <Button layoutX="1001.0" layoutY="271.0" mnemonicParsing="false" onAction="#AddGameLi" prefHeight="35.0" prefWidth="257.0" text="Add to Collection" />
       <Button layoutX="43.0" layoutY="196.0" mnemonicParsing="false" onAction="#AddMoney" prefHeight="63.0" prefWidth="92.0" text="Add Money" />
+      <Button layoutX="578.0" layoutY="14.0" mnemonicParsing="false" onAction="#ChangePhoto" text="ChangePhoto" />
+      <Label fx:id="photo" layoutX="21.0" layoutY="18.0" minWidth="0.0" />
    </children>
 </AnchorPane>

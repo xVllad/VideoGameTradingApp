@@ -16,6 +16,7 @@ import sample.Model.Person;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class GameView implements Initializable {
@@ -37,8 +38,10 @@ public class GameView implements Initializable {
         GameDesc.setText(DataBase.getGamesData().get(index).getDescription());
         GamePrice.setText(Float.toString(DataBase.getGamesData().get(index).getPrice()));
         GameAuthor.setText(DataBase.getGamesData().get(index).getUserName());
-
-
+        if(!DataBase.getGamesData().get(index).getPhoto().equals("")) {
+            Image img = new Image(DataBase.getGamesData().get(index).getPhoto());
+            PhotoGame.setImage(img);
+        }
         ind = index;
     }
 

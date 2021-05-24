@@ -61,7 +61,7 @@ public class SignUp {
 
                 String encrypted = td.encrypt(PasswordField.getText());
 
-                DataBase.AddAccount(UserNameField.getText(), encrypted, null, null, check,0);
+                DataBase.AddAccount(UserNameField.getText(), encrypted, null, "", check,0);
                 //DataBase.getPersonData().add(new Person(UserNameField.getText(),PasswordField.getText(),null,check));
                 Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
                 stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
