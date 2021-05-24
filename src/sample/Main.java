@@ -38,14 +38,6 @@ public class Main extends Application {
         System.out.println(DataBase.fileLogin);
         DataBase.readXMLPerson();
         DataBase.readXMLGames();
-        /*
-        for (Games gm:
-                DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList()) {
-            AddGameToSell.gls.addAll(gm);
-        }
-
-         */
-        //System.out.println(DataBase.getPersonData().get(DataBase.indexLogin).getGameLoginList().get(0).getName());
 
     }
 
