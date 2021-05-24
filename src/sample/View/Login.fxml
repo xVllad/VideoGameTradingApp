@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.PasswordField?>
@@ -33,15 +34,18 @@
                   <Font size="18.0" />
                </font>
             </PasswordField>
-            <Button fx:id="Login" layoutX="416.0" layoutY="589.0" mnemonicParsing="false" onAction="#OnClickEventLogin" prefHeight="40.0" prefWidth="200.0" stylesheets="@../CSS/LoginStyle.css" text="Login">
+            <Button fx:id="Login" layoutX="418.0" layoutY="601.0" mnemonicParsing="false" onAction="#OnClickEventLogin" prefHeight="40.0" prefWidth="200.0" stylesheets="@../CSS/LoginStyle.css" text="Login">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font></Button>
-            <Hyperlink layoutX="439.0" layoutY="669.0" onAction="#OnClickEventRegister" prefHeight="39.0" prefWidth="154.0" style="-fx-text-fill: #1c0b43;" text="New? Sign Up Here!">
+            <Hyperlink layoutX="441.0" layoutY="674.0" onAction="#OnClickEventRegister" prefHeight="39.0" prefWidth="154.0" style="-fx-text-fill: #1c0b43;" text="New? Sign Up Here!">
                <font>
                   <Font size="16.0" />
                </font>
             </Hyperlink>
+            <FontAwesomeIconView fill="#fa96ba" glyphName="USERS" layoutX="491.0" layoutY="159.0" size="50" />
+            <FontAwesomeIconView fill="#fa96ba" glyphName="USER" layoutX="297.0" layoutY="368.0" size="35" />
+            <FontAwesomeIconView fill="#fa96ba" glyphName="LOCK" layoutX="298.0" layoutY="475.0" size="35" />
          </children>
       </AnchorPane>
    </center>

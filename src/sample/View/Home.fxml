@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
@@ -15,10 +16,11 @@
             <VBox fx:id="GameListVB" prefHeight="850.0" prefWidth="1200.0" style="-fx-background-color: #FFFF;" />
          </content>
       </ScrollPane>
-      <TextArea layoutX="50.0" layoutY="129.0" prefHeight="44.0" prefWidth="1202.0" promptText="PHOTO               TITLE                                DESCRIPTION                                                                 PRICE                                 AUTHOR" style="-fx-background-color: #fa96ba;">
+      <TextArea layoutX="50.0" layoutY="129.0" prefHeight="54.0" prefWidth="1215.0" promptText="PHOTO               TITLE                                DESCRIPTION                                                                 PRICE                                 AUTHOR" style="-fx-background-color: #fa96ba;">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </TextArea>
+      <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" layoutX="275.0" layoutY="69.0" size="35" />
    </children>
 </AnchorPane>
