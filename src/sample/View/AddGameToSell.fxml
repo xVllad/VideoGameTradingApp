@@ -17,12 +17,12 @@
             <Font size="24.0" />
          </font>
       </TextField>
-      <Label layoutX="43.0" layoutY="125.0" text="Game Name :" textFill="WHITE">
+      <Label layoutX="43.0" layoutY="125.0" text="Title:" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="43.0" layoutY="258.0" text="Game Description :" textFill="WHITE">
+      <Label layoutX="43.0" layoutY="258.0" text=" Description :" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
@@ -32,7 +32,7 @@
             <Font size="24.0" />
          </font>
       </TextField>
-      <Label fx:id="lblGamePrice" layoutX="47.0" layoutY="471.0" text="Game Price :" textFill="WHITE">
+      <Label fx:id="lblGamePrice" layoutX="47.0" layoutY="471.0" text=" Price :" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
@@ -46,7 +46,7 @@
          <font>
             <Font name="System Bold" size="18.0" />
          </font></Button>
-      <Label fx:id="lblPriceType" layoutX="214.0" layoutY="531.0" text="(Euro)" textFill="WHITE">
+      <Label fx:id="lblPriceType" layoutX="214.0" layoutY="531.0" text="EUR" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>

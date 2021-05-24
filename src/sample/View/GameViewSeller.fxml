@@ -10,8 +10,8 @@
     <children>
         <AnchorPane layoutX="5.0" layoutY="5.0" prefHeight="90.0" prefWidth="1190.0" style="-fx-background-color: #FFFF;">
             <children>
-                <Button layoutX="1025.0" layoutY="10.0" mnemonicParsing="false" onAction="#SellFromCol" prefHeight="70.0" prefWidth="70.0" text="SELL" />
-                <Button layoutX="1106.0" layoutY="10.0" mnemonicParsing="false" onAction="#RemoveFromCol" prefHeight="70.0" prefWidth="70.0" text="REMOVE" />
+                <Button layoutX="1025.0" layoutY="10.0" mnemonicParsing="false" onAction="#SellFromCol" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #ffd33b #ffd33b;" text="SELL" />
+                <Button layoutX="1106.0" layoutY="10.0" mnemonicParsing="false" onAction="#RemoveFromCol" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: #ffd33b #ffd33b;" text="REMOVE" />
               <Label fx:id="GamePriceSel" layoutX="778.0" layoutY="30.0" prefHeight="31.0" prefWidth="100.0" text="Label" />
             </children></AnchorPane>
         <ImageView fx:id="GamePhoto" fitHeight="90.0" fitWidth="100.0" layoutX="6.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
