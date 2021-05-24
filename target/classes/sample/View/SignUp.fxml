@@ -11,33 +11,39 @@
    <children>
       <AnchorPane layoutX="442.0" layoutY="77.0" prefHeight="847.0" prefWidth="717.0" style="-fx-background-color: white;">
          <children>
-            <TextField fx:id="UserNameField" layoutX="209.0" layoutY="198.0" prefHeight="40.0" prefWidth="300.0" promptText="Pick an username" style="-fx-background-color: transparent; -fx-border-color: #1c0b43; -fx-border-width: 0px 0px 4px 0px;">
+            <TextField fx:id="UserNameField" layoutX="209.0" layoutY="122.0" prefHeight="40.0" prefWidth="300.0" promptText="Pick an username" style="-fx-background-color: transparent; -fx-border-color: #1c0b43; -fx-border-width: 0px 0px 4px 0px;">
                <font>
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="PasswordField" layoutX="209.0" layoutY="299.0" prefHeight="40.0" prefWidth="300.0" promptText="Pick a password" style="-fx-background-color: transparent; -fx-border-color: #1c0b43; -fx-border-width: 0px 0px 4px 0px;">
+            <TextField fx:id="PasswordField" layoutX="209.0" layoutY="239.0" prefHeight="40.0" prefWidth="300.0" promptText="Pick a password" style="-fx-background-color: transparent; -fx-border-color: #1c0b43; -fx-border-width: 0px 0px 4px 0px;">
                <font>
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="RePasswordField" layoutX="209.0" layoutY="402.0" prefHeight="40.0" prefWidth="300.0" promptText="Repeat password" style="-fx-background-color: transparent; -fx-border-color: #1c0b43; -fx-border-width: 0px 0px 4px 0px;">
+            <TextField fx:id="RePasswordField" layoutX="209.0" layoutY="344.0" prefHeight="40.0" prefWidth="300.0" promptText="Repeat password" style="-fx-background-color: transparent; -fx-border-color: #1c0b43; -fx-border-width: 0px 0px 4px 0px;">
                <font>
                   <Font size="18.0" />
                </font>
             </TextField>
-            <Button layoutX="259.0" layoutY="555.0" mnemonicParsing="false" onAction="#CreateAccountBtn" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #1c0b43;" text="Create Account" textFill="#f8f6f6">
+            <Button layoutX="259.0" layoutY="589.0" mnemonicParsing="false" onAction="#CreateAccountBtn" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #1c0b43;" text="Create Account" textFill="#f8f6f6">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Button>
-            <Hyperlink layoutX="217.0" layoutY="652.0" onAction="#OnClickEventAlreadyHave" style="-fx-text-fill: #fa96ba;" text="Already have an account? Sign in here!" textFill="WHITE">
+            <Hyperlink layoutX="225.0" layoutY="665.0" onAction="#OnClickEventAlreadyHave" style="-fx-text-fill: #fa96ba;" text="Already have an account? Sign in here!" textFill="WHITE">
                <font>
                   <Font size="16.0" />
                </font>
             </Hyperlink>
-            <CheckBox fx:id="checkBuy" onAction="#CheckBuy" layoutX="242.0" layoutY="476.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="91.0" text="Buyer" />
-            <CheckBox fx:id="checkSel" onAction="#CheckSel" layoutX="409.0" layoutY="476.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="91.0" text="Seller" />
+            <CheckBox fx:id="checkBuy" layoutX="259.0" layoutY="463.0" mnemonicParsing="false" onAction="#CheckBuy" prefHeight="27.0" prefWidth="91.0" text="Buyer">
+               <font>
+                  <Font size="18.0" />
+               </font></CheckBox>
+            <CheckBox fx:id="checkSel" layoutX="394.0" layoutY="463.0" mnemonicParsing="false" onAction="#CheckSel" prefHeight="27.0" prefWidth="91.0" text="Seller">
+               <font>
+                  <Font size="18.0" />
+               </font></CheckBox>
          </children>
       </AnchorPane>
    </children>

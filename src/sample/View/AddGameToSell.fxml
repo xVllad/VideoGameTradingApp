@@ -11,7 +11,7 @@
 <AnchorPane prefHeight="1000.0" prefWidth="1300.0" style="-fx-background-color: #190b42;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.View.AddGameToSell">
    <children>
       <AnchorPane layoutX="635.0" prefHeight="1000.0" prefWidth="9.0" style="-fx-background-color: #fa96ba;" />
-      <ImageView fitHeight="950.0" fitWidth="600.0" layoutX="680.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgGame" fitHeight="950.0" fitWidth="600.0" layoutX="680.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
       <TextField fx:id="GameNameE" layoutX="46.0" layoutY="175.0" prefHeight="51.0" prefWidth="526.0">
          <font>
             <Font size="24.0" />

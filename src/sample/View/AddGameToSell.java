@@ -9,15 +9,18 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import sample.Model.DataBase;
 import sample.Model.Games;
-
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javafx.scene.image.Image;
+
 
 import org.apache.commons.lang.math.NumberUtils;
 
@@ -30,6 +33,7 @@ public class AddGameToSell implements Initializable {
     public Label PhotoPath;
     public Label lblGamePrice;
     public Label lblPriceType;
+    public ImageView imgGame;
     private float pr=0;
 
 
@@ -71,6 +75,9 @@ public class AddGameToSell implements Initializable {
         Stage stg = new Stage();
         File fl = new FileChooser().showOpenDialog(stg);
         PhotoPath.setText(fl.toURI().toString());
+        Image img = new Image(PhotoPath.getText());
+        imgGame.setImage(img);
+
     }
 
     @Override
